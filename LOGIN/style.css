@@ -1,13 +1,32 @@
+* ::selection{
+    background-color: aquamarine;
+    color: black;
+}
 body{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(144, 230, 16, 0.832);
+}
+.nav_expand-lg{
+    height: 10vh;
     width: 100vw;
     background-color: aquamarine;
+    color: black;
 }
-nav{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    position: absolute;
-    top: 0;
-    background-color: lightgray;
+.main-container{
+    height: 90vh;
+    width: 100vw;
+    background-color: rgba(80, 41, 117, 0.849);
 }
+#top-btn{
+    background-color: rgba(17, 17, 162, 0.758);
+    border-color: rgba(17, 17, 162, 0.758);
+    padding: 12px 24px;
+    
+}
+#top-btn:hover{
+    background-color: rgba(17, 17, 162, 1);
+    border-color: rgba(17, 17, 162, 1);
+    transform: scale(1.05);
+}
+

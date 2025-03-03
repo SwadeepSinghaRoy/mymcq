@@ -6,15 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">.</head>
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">.
     <link rel="stylesheet" href="style.css">
+</head>
+
+
 <body>
-    <nav>
-        <div class="container">
-            <div class="home">Home</div>
-            <div class="login">login</div>
+    <nav class="navbar nav_expand-lg navbar-dark ">
+        <div class="navbar-container container-fluid d=flex justify content-between align-item_center ">
+            <div class="home"><strong>Home</strong></div>
+            <div class="login">
+                <button type=button class="btn" id="top-btn" data-bs-toggle="ofcanvas" data-bs-target="#offcanvasdarknavbar" aria-control="offcanvasdarknavbar">Login</button>
+            </div>
         </div>
     </nav>
+    <div class="main-container">
+        <div class="offfcanvas offcanvas-bottom"  tobindesk="-1" id="offcanvasDarkCanvas">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkCanvasLogin">Login Here</h5>
+            </div>
+        </div>
+        <div class="offcanvas-body">
+
+        </div>
+        <div class="offcanvas-body-right">
+            <div class="form-section">
+                <h4>Login</h4>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="Email address">
+                    <label for="floatingInputEmail">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingInputPassword" placeholder="Password">
+                    <label for="floatingInputPassword">Password</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+
+        </div>
+    </div>
     <!-- <form>
         <div class="col-6">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
