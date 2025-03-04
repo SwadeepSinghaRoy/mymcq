@@ -24,6 +24,9 @@
         <div class="offfcanvas offcanvas-bottom"  tobindesk="-1" id="offcanvasDarkCanvas">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasDarkCanvasLogin">Login Here</h5>
+                <button type="button" class="btn btn-close-white" data-bs-dismiss="offcanvas"aria-level="close">
+
+                </button>
             </div>
         </div>
         <div class="offcanvas-body">
