@@ -16,7 +16,8 @@
         <div class="navbar-container container-fluid d=flex justify content-between align-item_center ">
             <div class="home"><strong>Home</strong></div>
             <div class="login">
-                <button type=button class="btn" id="top-btn" data-bs-toggle="ofcanvas" data-bs-target="#offcanvasdarknavbar" aria-control="offcanvasdarknavbar">Login</button>
+                <button type=button class="btn" id="top-btn" data-bs-toggle="ofcanvas" data-bs-target="#offcanvasdarknavbar" aria-control="offcanvasdarknavbar">
+                    Login</button>
             </div>
         </div>
     </nav>
@@ -34,21 +35,21 @@
         </div>
         <div class="offcanvas-body-right">
             <div class="form-section">
-                <h4>Login</h4>
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="Email address">
-                    <label for="floatingInputEmail">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingInputPassword" placeholder="Password">
-                    <label for="floatingInputPassword">Password</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberMe">
-                    <label class="form-check-label" for="rememberMe">Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </div>
+                <form action="" class="login-form">
+                    <div class="login-part">
+                        <label for="user-email" class="text-white col-12 input-fileds">Email Address</label>
+                        <input type="text" id="input-email" placeholder="enter your email-id">
+                    </div>
+                    <div class="login-part">
+                        <label for="use-password" class="text-white col-12 input-fileds">Password</label>
+                        <input type="password" id="input-passsword" placeholder="enter your password">
+                    </div>
+                    <div class="login-part form-buttom">
+                        <button type=submit class="btn text-success h-100 w-100">submit</button>
+                    </div>
+                    
+                </form>
+
 
         </div>
     </div>

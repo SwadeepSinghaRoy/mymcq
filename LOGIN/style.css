@@ -29,4 +29,32 @@ body{
     border-color: rgba(17, 17, 162, 1);
     transform: scale(1.05);
 }
+.nav-container{
+    height: 100%;
+    width: 100%;
+    background-color: bisque !important;
+}
+.navbar .container-fluid .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+}
+.offcanvas .offcanvas-header{
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1;
+    color:antiquewhite;
+    
+}
+.offcanvas .canvas-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+
 
