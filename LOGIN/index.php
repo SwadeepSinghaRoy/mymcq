@@ -47,11 +47,11 @@
                     <div class="login-part form-buttom">
                         <button type=submit class="btn text-success h-100 w-100">submit</button>
                     </div>
-                    
                 </form>
-
-
         </div>
+        <form id="formForUserId" method="POST">
+        <input type="hidden" name="userId" id="forUserId">
+    </form>
     </div>
     <!-- <form>
         <div class="col-6">
