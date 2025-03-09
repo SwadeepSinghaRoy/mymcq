@@ -77,6 +77,11 @@
         function openLoginPart() {
         $('.login-part').fadeToggle(800);
     }
+    $('.home').on("click", function() {
+        window.location.href = "../index.php";
+    });
+
+
     </script>
 </body>
 
