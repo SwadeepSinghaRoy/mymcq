@@ -80,6 +80,7 @@
     $('.home').on("click", function() {
         window.location.href = "../index.php";
     });
+    $(document).ready(function() {
 
 
     </script>
