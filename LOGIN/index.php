@@ -32,18 +32,18 @@
             </div>
             <div class="offcanvas-body">
                 <div class="offcanvas-body-left">
-                    
+
                 </div>
                 <div class="offcanvas-body-right">
                     <div class="form-section">
                         <form action="" id="login-form">
                             <div class="login-part">
                                 <label for="user-email" class="text-white col-12 input-fileds">Email Address</label>
-                                <input type="text" id="input-email" placeholder="enter your email-id">
+                                <input type="text" id="user-email" placeholder="enter your email-id">
                             </div>
                             <div class="login-part">
                                 <label for="use-password" class="text-white col-12 input-fileds">Password</label>
-                                <input type="password" id="input-passsword" placeholder="enter your password">
+                                <input type="password" id="user-passsword" placeholder="enter your password">
                             </div>
                             <div class="login-part form-buttom">
                                 <button type="submit" class="btn text-success h-100 w-100">submit</button>
@@ -62,22 +62,38 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
-        $('.home').on("click", function(){
-            window.location.href= "../index.php";
-        });
+    $('.home').on("click", function() {
+        window.location.href = "../index.php";
+    });
 
-        $(document).ready(function(){
-            $('#login-form').on("submit",function(e){
-                e.preventDefault();
-                let useremail = $('#input-email').val();
-                let userpasword = $('#input-passsword').val();
-            });
+    $(document).ready(function() {
+        $('#login-form').on("submit", function(e) {
+            e.preventDefault();
+            let Email = $('#user-email').val();
+            let Password = $('#user-password').val();
             $.ajax({
-                
+                type: 'post',
+                url: 'login.php',
+                data: {
+                    user_email: Email,
+                    user_password: Password
+                },
+                success: function(response){
+                    let answer = JSON.parse(response);
+                    if (answer.success != true) {
+                        alert('you have entered wrong email or password');
+                    }
+
+                       
+                }
+
+
 
             });
-
         });
+
+
+    });
     </script>
 </body>
 
