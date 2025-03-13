@@ -43,7 +43,7 @@
                             </div>
                             <div class="login-part">
                                 <label for="use-password" class="text-white col-12 input-fileds">Password</label>
-                                <input type="password" id="user-passsword" placeholder="enter your password">
+                                <input type="password" id="user-password" placeholder="enter your password">
                             </div>
                             <div class="login-part form-buttom">
                                 <button type="submit" class="btn text-success h-100 w-100">submit</button>
@@ -79,6 +79,7 @@
                     user_password: Password
                 },
                 success: function(response){
+                    console.log(response);
                     let answer = JSON.parse(response);
                     if (answer.success != true) {
                         alert('you have entered wrong email or password');
