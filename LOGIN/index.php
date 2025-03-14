@@ -67,34 +67,47 @@
     });
 
     $(document).ready(function() {
-        $('#login-form').on("submit", function(e) {
-            e.preventDefault();
-            let Email = $('#user-email').val();
-            let Password = $('#user-password').val();
-            $.ajax({
-                type: 'post',
-                url: 'login.php',
-                data: {
-                    user_email: Email,
-                    user_password: Password
-                },
-                success: function(response){
-                    console.log(response);
-                    let answer = JSON.parse(response);
-                    if (answer.success != true) {
-                        alert('you have entered wrong email or password');
-                    }
+                $('#login-form').on("submit", function(e) {
+                    e.preventDefault();
+                    let Email = $('#user-email').val();
+                    let Password = $('#user-password').val();
+                    $.ajax({
+                        type: 'post',
+                        url: 'login.php',
+                        data: {
+                            user_email: Email,
+                            user_password: Password
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            let answer = JSON.parse(response);
+                            if (answer.success != true) {
+                                alert('you have entered wrong email or password');
+                            } else {
+                                if (answer.user_type_id == 1) {
+                                    $('.btn').html('Loading...');
+                                    $('#forUserId').val(answer.id);
+                                    $('#formForUserId').prop('action', '../ADMIN/index.php');
+                                    console.log(answer);
 
-                       
-                }
+                                    setTimeout(function() {
+                                        $('#loading-spinner').hide();
+                                        $('#login-btn').prop('disabled', false);
+                                        $('#login-btn').text('LOGIN');
+                                        $('#formForUserId').submit();
+                                        $('.btn').html('LOGIN');
+                                    }, 1000);
+
+
+                                }
 
 
 
-            });
-        });
+                            });
+                    });
 
 
-    });
+                });
     </script>
 </body>
 
