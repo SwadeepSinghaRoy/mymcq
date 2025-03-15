@@ -55,6 +55,9 @@
         </div>
 
     </div>
+    <form action="" id="formForUserId" method="post">
+        <input type="hidden" name="userid" id="forUserId">
+    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -62,52 +65,44 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
-    $('.home').on("click", function() {
-        window.location.href = "../index.php";
-    });
+        $('.home').on("click", function() {
+            window.location.href = "../index.php";
+        });
 
-    $(document).ready(function() {
-                $('#login-form').on("submit", function(e) {
-                    e.preventDefault();
-                    let Email = $('#user-email').val();
-                    let Password = $('#user-password').val();
-                    $.ajax({
-                        type: 'post',
-                        url: 'login.php',
-                        data: {
-                            user_email: Email,
-                            user_password: Password
-                        },
-                        success: function(response) {
-                            console.log(response);
-                            let answer = JSON.parse(response);
-                            if (answer.success != true) {
-                                alert('you have entered wrong email or password');
-                            } else {
-                                if (answer.user_type_id == 1) {
-                                    $('.btn').html('Loading...');
-                                    $('#forUserId').val(answer.id);
-                                    $('#formForUserId').prop('action', '../ADMIN/index.php');
-                                    console.log(answer);
-
-                                    setTimeout(function() {
-                                        $('#loading-spinner').hide();
-                                        $('#login-btn').prop('disabled', false);
-                                        $('#login-btn').text('LOGIN');
+        $(document).ready(function() {
+                    $('#login-form').on("submit", function(e) {
+                        e.preventDefault();
+                        let Email = $('#user-email').val();
+                        let Password = $('#user-password').val();
+                        $.ajax({
+                            type: 'post',
+                            url: 'login.php',
+                            data: {
+                                user_email: Email,
+                                user_password: Password
+                            },
+                            success: function(response) {
+                                let answer = JSON.parse(response);
+                                //console.log(answer.success);
+                                // console.log(response);
+                                if (answer.success != true) {
+                                    alert("you have entered a wrong email or password");
+                                }else{
+                                    if(answer.user_type_id==1){
+                                        $('.btn').html('loading...');
+                                        $('#forUserId').val(answer.id);
+                                        $('#formForUserId').prop('action','../ADMIN/index.php');
                                         $('#formForUserId').submit();
-                                        $('.btn').html('LOGIN');
-                                    }, 1000);
 
-
+                                    }
                                 }
+                            }
+                        });
 
 
-
-                            });
                     });
-
-
-                });
+        });
+        
     </script>
 </body>
 

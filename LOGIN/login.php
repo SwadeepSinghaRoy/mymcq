@@ -1,12 +1,12 @@
 <?php
 require_once '../config.php';
-$stmt = $pdo->prepare('select * from users where email=?');
-$stmt -> execute([$_POST['user_email']]);
-print_r($_POST);
+$stmt = $pdo->prepare('select * from users where email=? and user_password=?');
+$stmt -> execute([$_POST['user_email'],$_POST['user_password']]);
+// print_r($_POST);
 $user= $stmt->fetch(PDO::FETCH_ASSOC);
 
 $returnarray=[];
-if($user && $_POST['user_Password']=== $user['user_password']){
+if($user && $_POST['user_password']=== $user['user_password']){
     $returnarray['id']= $user['id'];
     $returnarray['name']= $user['email'];
     $returnarray['user_name']= $user['name'];
@@ -14,6 +14,8 @@ if($user && $_POST['user_Password']=== $user['user_password']){
     $returnarray['success']= true;
 }
 else{
-    $returnarray['success']= false;
+    // echo 'else part';
+    $returnarray['success']= 0;
 }
 echo json_encode($returnarray);
+// print_r($user);
