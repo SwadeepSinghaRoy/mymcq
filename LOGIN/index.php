@@ -94,6 +94,12 @@
                                         $('#formForUserId').prop('action','../ADMIN/index.php');
                                         $('#formForUserId').submit();
 
+                                    }else if(answer.user_type_id==2){
+                                        $('.btn').html('loading...');
+                                        $('#forUserId').val(answer.id);
+                                        $('#formForUserId').prop('action','../INSTRUCTOR/index.php');
+                                        $('#formForUserId').submit();
+
                                     }
                                 }
                             }
