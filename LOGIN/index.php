@@ -105,7 +105,7 @@
 
                                             $('#forUserId').val(answer.id);
                                             $('#formForUserId').prop('action', '../STUDENT/index.php');
-                                            console.log(answer);
+                                            
 
                                         }
                                     }
