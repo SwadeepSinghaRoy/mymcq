@@ -70,50 +70,43 @@
     });
 
     $(document).ready(function() {
-                $('#login-form').on("submit", function(e) {
-                        e.preventDefault();
-                        let Email = $('#user-email').val();
-                        let Password = $('#user-password').val();
-                        $.ajax({
-                                type: 'post',
-                                url: 'login.php',
-                                data: {
-                                    user_email: Email,
-                                    user_password: Password
-                                },
-                                success: function(response) {
-                                    let answer = JSON.parse(response);
-                                    //console.log(answer.success);
-                                    // console.log(response);
-                                    if (answer.success != true) {
-                                        alert("you have entered a wrong email or password");
-                                    } else {
-                                        if (answer.user_type_id == 1) {
-                                            $('.btn').html('loading...');
-                                            $('#forUserId').val(answer.id);
-                                            $('#formForUserId').prop('action', '../ADMIN/index.php');
-                                            $('#formForUserId').submit();
+        $('#login-form').on("submit", function(e) {
+            e.preventDefault();
+            let Email = $('#user-email').val();
+            let Password = $('#user-password').val();
+            $.ajax({
+                type: 'post',
+                url: 'login.php',
+                data: {
+                    user_email: Email,
+                    user_password: Password
+                },
+                success: function(response) {
+                    let answer = JSON.parse(response);
+                    //alert(answer.success);
+                    // console.log(response);
+                    if (answer.success != true) {
+                        alert("you have entered a wrong email or password");
+                    } else {
+                        if (answer.user_type_id == 1) {
+                            $('.btn').html('loading...');
+                            $('#forUserId').val(answer.id);
+                            $('#formForUserId').prop('action', '../ADMIN/index.php');
+                            $('#formForUserId').submit();
 
-                                        } else if (answer.user_type_id == 2) {
-                                            $('.btn').html('loading...');
-                                            $('#forUserId').val(answer.id);
-                                            $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
-                                            $('#formForUserId').submit();
+                        } else if (answer.user_type_id == 2) {
+                            $('.btn').html('loading...');
+                            $('#forUserId').val(answer.id);
+                            $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
+                            $('#formForUserId').submit();
 
-                                        } else if (answer.user_type_id == 3) {
-                                            $('.btn').html('Loading...');
+                        }
+                    }
+                }
 
-                                            $('#forUserId').val(answer.id);
-                                            $('#formForUserId').prop('action', '../STUDENT/index.php');
-                                            
-
-                                        }
-                                    }
-                                });
-
-
-                        });
-                });
+            });
+        });
+    });
     </script>
 </body>
 
