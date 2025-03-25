@@ -1,34 +1,123 @@
-body{
-    height: 100%;
-    width: 100%;
-    background-color: aqua;
+body {
+    height: 100vh; 
+    width: 100vw; 
+    color: #e0e0e0; 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0; 
+    /* overflow: hidden;  */
+}
 
-}
-.main-container{
-    height: 90vh;
+.main-container {
+    height: 100vh; 
     width: 100%;
-    background-color: brown;
+    background: linear-gradient(135deg, #42275a, #734b6d); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.nav_expand-lg{
+
+.nav_expand-lg {
     height: 10vh;
     width: 100%;
-    background-color: blue;
-    color: black;
-    padding: 0;
-}
-#top-btn{
-    background-color: aqua;
-    color: black;
-}
-#top-btn:hover{
-    cursor: pointer;
-    background-color: rgb(3, 42, 42);
-}
-.navbar-container{
-    height: 100%;
-    width: 100%;
-}
- .home{
-    cursor: pointer;
+    background: linear-gradient(135deg, #141e30, #243b55); 
+    color: #fff; 
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
+#top-btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease; 
+}
+
+#top-btn:hover {
+    background: linear-gradient(to right, #4a00e0, #1e68f5); 
+}
+
+.navbar-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home {
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600; 
+}
+
+.offcanvas-bottom {
+    background: linear-gradient(135deg, #232526, #414345); 
+    color: #e0e0e0;
+    border-top: 1px solid #555; 
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #555;
+    padding-bottom: 15px;
+}
+
+.offcanvas-title {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.offcanvas-body {
+    padding: 20px;
+}
+
+.form-section {
+    width: 100%;
+}
+
+.login-part {
+    margin-bottom: 20px;
+}
+
+.input-fileds {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333; 
+    color: #fff;
+}
+
+.form-buttom {
+    margin-top: 20px;
+}
+
+.form-buttom button {
+    background: linear-gradient(to right, #00b09b, #96c93d); 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.form-buttom button:hover {
+    background: linear-gradient(to right, #008a7a, #7cb342); 
+}
