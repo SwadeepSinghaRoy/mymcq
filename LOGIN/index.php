@@ -65,48 +65,53 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
-    $('.home').on("click", function() {
-        window.location.href = "../index.php";
-    });
+        $('#top-btn').on('click', function(){
+            $('.offcanvas-bottom').fadeToggle(800);
+        });
+        
+    
+        $('.home').on("click", function() {
+            window.location.href = "../index.php";
+        });
 
-    $(document).ready(function() {
-        $('#login-form').on("submit", function(e) {
-            e.preventDefault();
-            let Email = $('#user-email').val();
-            let Password = $('#user-password').val();
-            $.ajax({
-                type: 'post',
-                url: 'login.php',
-                data: {
-                    user_email: Email,
-                    user_password: Password
-                },
-                success: function(response) {
-                    let answer = JSON.parse(response);
-                    //alert(answer.success);
-                    // console.log(response);
-                    if (answer.success != true) {
-                        alert("you have entered a wrong email or password");
-                    } else {
-                        if (answer.user_type_id == 1) {
-                            $('.btn').html('loading...');
-                            $('#forUserId').val(answer.id);
-                            $('#formForUserId').prop('action', '../ADMIN/index.php');
-                            $('#formForUserId').submit();
+        $(document).ready(function() {
+            $('#login-form').on("submit", function(e) {
+                e.preventDefault();
+                let Email = $('#user-email').val();
+                let Password = $('#user-password').val();
+                $.ajax({
+                    type: 'post',
+                    url: 'login.php',
+                    data: {
+                        user_email: Email,
+                        user_password: Password
+                    },
+                    success: function(response) {
+                        let answer = JSON.parse(response);
+                        //alert(answer.success);
+                        // console.log(response);
+                        if (answer.success != true) {
+                            alert("you have entered a wrong email or password");
+                        } else {
+                            if (answer.user_type_id == 1) {
+                                $('.btn').html('loading...');
+                                $('#forUserId').val(answer.id);
+                                $('#formForUserId').prop('action', '../ADMIN/index.php');
+                                $('#formForUserId').submit();
 
-                        } else if (answer.user_type_id == 2) {
-                            $('.btn').html('loading...');
-                            $('#forUserId').val(answer.id);
-                            $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
-                            $('#formForUserId').submit();
+                            } else if (answer.user_type_id == 2) {
+                                $('.btn').html('loading...');
+                                $('#forUserId').val(answer.id);
+                                $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
+                                $('#formForUserId').submit();
 
+                            }
                         }
                     }
-                }
 
+                });
             });
         });
-    });
     </script>
 </body>
 

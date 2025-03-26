@@ -4,12 +4,12 @@ body {
     color: #e0e0e0; 
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0; 
-    /* overflow: hidden;  */
+    overflow: hidden; 
 }
 
 .main-container {
     height: 100vh; 
-    width: 100%;
+    width: 100vw;
     background: linear-gradient(135deg, #42275a, #734b6d); 
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
 
 .nav_expand-lg {
     height: 10vh;
-    width: 100%;
+    width: 100vw;
     background: linear-gradient(135deg, #141e30, #243b55); 
     color: #fff; 
     padding: 0 20px;
@@ -26,7 +26,7 @@ body {
     top: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
@@ -37,7 +37,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease; 
+    /* transition: background 0.3s ease;   */
 }
 
 #top-btn:hover {
@@ -49,12 +49,12 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+     justify-content: space-between;  */
 }
 
 .home {
     cursor: pointer;
-    font-size: 1.2em;
+     font-size: 1.2em; 
     font-weight: 600; 
 }
 
@@ -62,17 +62,22 @@ body {
     background: linear-gradient(135deg, #232526, #414345); 
     color: #e0e0e0;
     border-top: 1px solid #555; 
+    display:none;
 }
 
 .offcanvas-header {
     border-bottom: 1px solid #555;
     padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .offcanvas-title {
     color: #fff;
     font-size: 1.5em;
     font-weight: 600;
+    
 }
 
 .offcanvas-body {
