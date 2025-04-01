@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    welcome to student page
+    <h1>welcome to student page</h1>
 </body>
 </html>
