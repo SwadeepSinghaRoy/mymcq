@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>welcome to student page</h1>;
+    <h1>welcome to student page</h1>;
 </body>
 </html>
