@@ -46,7 +46,7 @@
                                 <input type="password" id="user-password" placeholder="enter your password">
                             </div>
                             <div class="login-part form-buttom">
-                                <button type="submit" class="btn text-success h-100 w-100">submit</button>
+                                <button type="submit" class="btn text-success h-100 w-100">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -74,43 +74,37 @@
             window.location.href = "../index.php";
         });
 
-        $(document).ready(function() {
-            $('#login-form').on("submit", function(e) {
+        $(document).ready(function(){
+           $('#login-form').on('submit', function(e){
                 e.preventDefault();
-                let Email = $('#user-email').val();
-                let Password = $('#user-password').val();
+                let userEmail=$('#user-email').val();
+                let userPassword=$('#user-password').val();
+                // console.log(email,password);
                 $.ajax({
-                    type: 'post',
-                    url: 'login.php',
-                    data: {
-                        user_email: Email,
-                        user_password: Password
+                    url:'login.php',
+                    type:'post',
+                    data:{
+                        userEmail:userEmail,
+                        userPassword:userPassword,
                     },
-                    success: function(response) {
-                        let answer = JSON.parse(response);
-                        //alert(answer.success);
-                        // console.log(response);
-                        if (answer.success != true) {
-                            alert("you have entered a wrong email or password");
-                        } else {
-                            if (answer.user_type_id == 1) {
-                                $('.btn').html('loading...');
-                                $('#forUserId').val(answer.id);
-                                $('#formForUserId').prop('action', '../ADMIN/index.php');
-                                $('#formForUserId').submit();
-
-                            } else if (answer.user_type_id == 2) {
-                                $('.btn').html('loading...');
-                                $('#forUserId').val(answer.id);
-                                $('#formForUserId').prop('action', '../INSTRUCTOR/index.php');
-                                $('#formForUserId').submit();
+                    success:function(response){
+                        response=JSON.parse(response);
+                        console.log(response);
+                        if(!response.success){
+                            alert("Please Check Your Email Or Password");
+                        }else{
+                            if(response.data.user_type_id==1){
+                                window.location.href='../ADMIN';
+                            }else if(response.data.user_type_id==2){
+                                window.location.href='../INSTRUCTOR';
+                            }else if(response.data.user_type_id==3){
+                                window.location.href='../STUDENT';
 
                             }
                         }
                     }
-
-                });
-            });
+                })
+           });
         });
     </script>
 </body>

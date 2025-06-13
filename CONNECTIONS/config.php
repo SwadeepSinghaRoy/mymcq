@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db   = 'mcq2_db';
 $user = 'root';
-$pass = 'swadeepsingharoy';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

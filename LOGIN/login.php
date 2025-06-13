@@ -1,21 +1,29 @@
 <?php
-require_once '../config.php';
-$stmt = $pdo->prepare('select * from users where email=? and user_password=?');
-$stmt -> execute([$_POST['user_email'],$_POST['user_password']]);
-// print_r($_POST);
-$user= $stmt->fetch(PDO::FETCH_ASSOC);
-
-$returnarray=[];
-if($user && $_POST['user_password']=== $user['user_password']){
-    $returnarray['id']= $user['id'];
-    $returnarray['name']= $user['email'];
-    $returnarray['user_name']= $user['name'];
-    $returnarray['user_type_id']= $user['user_type_id'];
-    $returnarray['success']= true;
+if(isset($_POST['userEmail'],$_POST['userPassword'])){
+    require_once '../CONNECTIONS/config.php';
+    try{
+        $email=$_POST['userEmail'];
+        // print_r($email);
+        $password=$_POST['userPassword'];
+        // print_r($password);
+        $stmt=$pdo->prepare('select * from users where email=?');
+        $stmt->execute([$email]);
+        $user=$stmt->fetch(PDO::FETCH_ASSOC);
+        // print_r($user);
+        $responseArray=[];
+        if($user && $password===$user['user_password']){
+            $responseArray['success']=true;
+            $responseArray['message']="Data Found";
+            $responseArray['data']=$user;
+        }else{
+            $responseArray['success']=false;
+            $responseArray['message']="Data Not Found";
+        }
+        echo json_encode($responseArray);
+    }catch(PDOException $e){
+        echo 'Error Checking:<br>'.$e->getmessage();
+    }
+}else{
+    echo "Data Not Found";
 }
-else{
-    // echo 'else part';
-    $returnarray['success']= 0;
-}
-echo json_encode($returnarray);
-// print_r($user);
+?>
