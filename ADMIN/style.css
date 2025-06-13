@@ -14,3 +14,12 @@ body{
     backdrop-filter: blur(10px);
     border-radius: 10px;
 }
+.offcanvas>.offcanvas-header{
+    color:whitesmoke;
+}
+.offcanvas .navbar-nav .nav-link {
+    color: whitesmoke !important;
+}
+.offcanvas .navbar-nav .nav-link:hover {
+    background-color: rgba(26, 25, 25, 0.07);
+}

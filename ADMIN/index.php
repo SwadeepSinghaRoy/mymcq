@@ -21,19 +21,19 @@
             <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Admin</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Check Users</a>
+                            <a class="nav-link active" aria-current="page" href="../CHECK-USERS">Check Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add Users</a>
+                            <a class="nav-link" href="../ADD-USERS">Add Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Insert Questions</a>
+                            <a class="nav-link" href="../INSERT-QUESTIONS">Insert Questions</a>
                         </li>
                     </ul>
                     <form class="d-flex mt-3" role="search">
