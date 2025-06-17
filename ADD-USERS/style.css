@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* *::-webkit-scrollbar{
+    overflow: hidden;
+} */
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.main-container{
+    height: 100%;
+    width: 100%;
+}
+.child-container{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(38, 38, 18, 0.366);
+}
+.child-container>header{
+    height: 10%;
+    width: 100%;
+    border: 1px solid blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.child-container>main{
+    height: 90%;
+    width: 100%;
+    border: 1px solid gold;
+}
