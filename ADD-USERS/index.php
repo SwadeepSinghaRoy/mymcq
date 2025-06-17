@@ -42,6 +42,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('.add-user-form').on('submit', function(e){
+                e.preventDefault();
+                let userTypeId=$('#user_type_id').val();
+                let name=$('#name').val();
+                let email=$('#email').val();
+                let password=$('#password').val();
+                $.ajax({
+                    url:'add_users.php',
+                    type:'post',
+                    data:{
+                        user_type_id:userTypeId,
+                        name:name,
+                        email:email,
+                        password:password
+                    },
+                    success:function(response){
+                        console.log(response);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
