@@ -61,7 +61,7 @@
                         password:password
                     },
                     success:function(response){
-                        console.log(response);
+                        alert(response);
                     }
                 });
             });
